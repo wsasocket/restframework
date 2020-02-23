@@ -12,6 +12,8 @@ from app.main import create_app, db
 #  需要迁移的数据模型
 from app.main.model import user
 from app.main.model import blacklist
+from app.main.model import caselist
+from app.main.model import project
 # dev 是在config.py中定义的开发模式的key,系统将使用配置文件中的参数运行
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.register_blueprint(blueprint)

@@ -8,8 +8,10 @@ class Auth:
         try:
             # fetch the user data
             user = User.query.filter_by(email=data.get('email')).first()
+            print(user)
             if user and user.check_password(data.get('password')):
                 auth_token = user.encode_auth_token(user.id)
+                print(auth_token)
                 if auth_token:
                     response_object = {
                         'status': 'success',
